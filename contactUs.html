@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="utf-8" />
+    <title>צור קשר - SIMPLANT</title>
+    <link rel="icon" href="photos/pothos_4900153.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="דף יצירת קשר לאתר SIMPLANT, בו ניתן לשלוח הודעות, שאלות והצעות לצוות האתר." />
+    <meta name="keywords" content="צור קשר, שאלות, הצעות, תלונות, SIMPLANT" />
+    <meta name="author" content="צוות SIMPLANT" />
+    <link href="styles/contactUs.css" rel="stylesheet" />
+    <script src="jScripts/contactUs.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <nav aria-label="main-nav" id="top_nav">
+            <ul>
+                <li class="navedge"><a href="index.html" id="logoslot">דף הבית</a></li>
+                <li>
+                    <span>גידול צמחים</span>
+                    <ul class="dropdown">
+                        <li><a href="plantCultivation.html">גידול צמחי תבלין</a></li> <!-- לינק לעמוד yael.html -->
+                        <li><a href="#noLink" class="noLink disabled">גידול צמחי מרפא</a></li> <!-- אופציה אפורה -->
+                        <li><a href="#noLink" class="noLink disabled">גידול צמחים מטפסים</a></li> <!-- אופציה אפורה -->
+                    </ul>
+                </li>
+                <li>
+                    <span>גידול הצמחים כחלק משגרת חיינו</span>
+                    <ul class="dropdown">
+                        <li><a href="homeDesgin.html">עיצוב הבית</a></li>
+                        <li><a href="#noLink" class="noLink disabled">שמירה על הבריאות</a></li> <!-- אופציה אפורה -->
+                    </ul>
+                </li>
+                <li><a href="order.html">הזמן מהחנות</a></li> <!-- כפתור לקישור לדף הזמנה -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- תפריט פירורי לחם -->
+    <nav class="breadcrumb">
+        <ol>
+            <li><a href="index.html">דף הבית</a></li>
+            <li><a href="contact.html">צור קשר</a></li>
+        </ol>
+    </nav>
+
+    <div class="container">
+        <!-- Contact Information Section -->
+        <div class="contact-info">
+            <h1>צור קשר</h1>
+            <p>נשמח לשמוע ממך! יש לך שאלה או הצעה? אנו כאן לעזור. השאירו פרטים בטופס ונחזור אליכם בהקדם האפשרי.</p>
+            <p>
+                <img src="photos/pothos_4900153.png" alt="Logo" class="tiny-image">
+                צוות אתר SIMPLANT
+            </p>
+            <p>מספר פלאפון: 054-1234567 | כתובת מייל: sistyash@gmail.com | כתובת: גולומב 52, חולון</p>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <form id="contactForm">
+                <label for="name">שם: <a class="required">*</a></label>
+                <input type="text" id="name" placeholder="הכנס את שמך (רק אותיות)" required minlength="2" />
+                <span id="nameError" class="error-message" style="display:none; color:red;"></span>
+
+                <label for="email">אימייל: <a class="required">*</a></label>
+                <input type="email" id="email" placeholder="הכנס את כתובת האימייל שלך (למשל: example@domain.com)" required />
+                <span id="emailError" class="error-message" style="display:none; color:red;"></span>
+
+                <label for="phone">טלפון: <a class="required">*</a></label>
+                <input type="tel" id="phone" placeholder="הכנס את מספר הטלפון שלך (10 ספרות בלבד)" pattern="[0-9]{10}" required />
+                <span id="phoneError" class="error-message" style="display:none; color:red;"></span>
+
+                <label for="message">הודעה: <a class="required">*</a></label>
+                <textarea id="message" placeholder="כתוב כאן את הודעתך (חובה)" required></textarea>
+                <span id="messageError" class="error-message" style="display:none; color:red;"></span>
+
+                <!-- חד ברירה (רדיובטן) -->
+                <div class="radio-group">
+                    <label>האם תרצה להצטרף לרשימת הדיוור שלנו בדוא"ל? <a class="required">*</a></label>
+                    <input type="radio" id="mailingListYes" name="mailingList" value="yes">
+                    <label for="mailingListYes">כן</label>
+                    <input type="radio" id="mailingListNo" name="mailingList" value="no">
+                    <label for="mailingListNo">לא</label>
+                </div>
+                <span id="mailingListError" class="error-message" style="display:none; color:red;"></span>
+
+                <!-- רב ברירה (צ'קבוקס) -->
+                <div class="checkbox-group">
+                    <label>באילו נושאים אתה פונה אלינו? <a class="required">*</a></label>
+                    <input type="checkbox" id="topic1" name="topic" value="תקלה">
+                    <label for="topic2">תלונה</label>
+                    <input type="checkbox" id="topic3" name="topic" value="שאלה">
+                    <label for="topic3">שאלה</label>
+                    <input type="checkbox" id="topic4" name="topic" value="בקשה">
+                    <label for="topic4">בקשה</label>
+                    <input type="checkbox" id="topic5" name="topic" value="אחר">
+                    <label for="topic5">אחר</label>
+                </div>
+                <span id="topicError" class="error-message" style="display:none; color:red;"></span>
+
+                <!-- כפתור שליחה -->
+                <input type="submit" value="שלח" id="submitButton" />
+            </form>
+            <p id="confirmationMessage" style="display:none; color: green; font-size: 1.2em;"></p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <nav aria-label="Footer_Nav" id="bottom_nav">
+            <ul id="ul_footer">
+                <li><a href="siteMap.html">מפת האתר</a></li>
+                <li><a href="about.html">אודות</a></li>
+                <li><a href="contactUs.html">צור קשר</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>

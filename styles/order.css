@@ -1,0 +1,334 @@
+﻿body {
+    font-family: 'Assistant', sans-serif;
+    background-color: #FFFFFF;
+    padding: 0;
+    text-align: right;
+    direction: rtl;
+    margin: 0 auto;
+    width: 1280px;
+}
+
+/* עיצוב ה-header */
+header {
+    background-color: #8A9C80;
+    padding: 10px 0;
+    top: 0; /* מוודא שהתפריט מוצמד לחלק העליון של המסך */
+    width: 100%; /* מבטיח שהתפריט יתפוס את כל רוחב המסך */
+}
+
+/* הגדרה לתפריט הניווט העליון */
+#top_nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* שיטה לרווח שווה */
+}
+
+    #top_nav ul li {
+        position: relative;
+    }
+
+        #top_nav ul li a {
+            font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        #top_nav ul li:hover a {
+            background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש */
+        }
+
+        /* יישור התפריט הנפתח למרכז הכפתור */
+        #top_nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 40px; /* או גובה הכפתור */
+            left: 50%; /* מתחילים מהמיקום האמצעי */
+            transform: translateX(-50%); /* מזיזים את התפריט חזרה בחצי מהרוחב שלו */
+            background-color: #8A9C80;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+        }
+
+        #top_nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        #top_nav ul li ul.dropdown li {
+            width: 150px;
+        }
+
+            /* הגדרה לצבע אפור עבור האופציות 2.2, 2.3, 3.2 */
+            #top_nav ul li ul.dropdown li a.disabled {
+                color: gray; /* צבע אפור */
+                cursor: not-allowed; /* מצביע לא מורשה */
+            }
+
+                /* מצב ה-hover עבור האופציות האפורות */
+                #top_nav ul li ul.dropdown li a.disabled:hover {
+                    background-color: transparent; /* אין שינוי ברקע */
+                }
+
+            #top_nav ul li ul.dropdown li a {
+                font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+                padding: 10px;
+                white-space: nowrap;
+            }
+
+                #top_nav ul li ul.dropdown li a:hover {
+                    background-color: rgba(255, 255, 255, 0.3); /* רקע לבן חלש */
+                }
+
+/* עיצוב הפוטר */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #8A9C80;
+    color: white;
+    margin-top: 20px;
+}
+
+/* הגדרה לתפריט הניווט התחתון */
+#ul_footer {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* שיטה לרווח שווה */
+}
+
+    #ul_footer li {
+        position: relative;
+    }
+
+        #ul_footer li a {
+            font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+            color: white; /* צבע טקסט */
+            padding: 10px 20px; /* רווח סביב הטקסט */
+            text-decoration: none; /* ביטול קו תחתון */
+            display: block; /* מאפשר להקיף את כל האזור */
+            transition: background-color 0.3s ease; /* מעבר חלק בעת שינוי */
+        }
+
+        #ul_footer li:hover a {
+            background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש בעת מעבר */
+        }
+
+
+/* שאר ה-CSS שלך */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1100px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-container, .boxes-container {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.summary-container {
+    width: 30%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-left: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: right;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+    /* סגנון עבור הכוכבית האדומה */
+    label .required {
+        color: red;
+        background-color: transparent; /* מבטל את הרקע הירוק */
+        font-size: 18px;
+        vertical-align: middle; /* מוודא שהכוכבית ממורכזת בצורה טובה */
+    }
+
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    font-family: Assistant, sans-serif;
+    padding: 10px;
+    margin: 5px 0 20px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex; /* מאפשר למקם את הכפתורים זה לצד זה */
+    justify-content: space-between; /* ריווח שווה בין הכפתורים */
+    margin-top: 20px; /* ריווח מעל הכפתורים */
+}
+
+    .button-container button {
+        margin-right: 10px; /* ריווח של 10 פיקסלים בין הכפתורים */
+    }
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+#plantDisplay, #accessoriesDisplay {
+    text-align: center;
+    margin-top: 20px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#plantImage, .accessory-image {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.accessory-image {
+    opacity: 0.5;
+}
+
+    .accessory-image.active {
+        opacity: 1;
+    }
+
+.box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    height: 150px;
+    margin-bottom: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+    .box h2 {
+        margin: 0;
+        font-size: 18px;
+        background-color: #eee;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        text-align: center;
+    }
+
+#orderSummary {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: right;
+    width: 100%; /* או כל רוחב שתרצי */
+    box-sizing: border-box;
+    display: block; /* ודא שהצגת הסיכום פעילה */
+}
+
+/* עיצוב עבור תפריט פירורי לחם */
+nav.breadcrumb {
+    margin: 20px 0;
+    font-family: 'Assistant', sans-serif;
+    font-size: 16px;
+}
+
+    nav.breadcrumb ol {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        direction: rtl;
+    }
+
+        nav.breadcrumb ol li {
+            display: inline-block;
+        }
+
+            nav.breadcrumb ol li + li:before {
+                content: ">";
+                padding: 0 10px;
+                color: #C5A690;
+            }
+
+            nav.breadcrumb ol li a {
+                text-decoration: none;
+                color: #8A9C80;
+                font-weight: bold;
+            }
+
+                nav.breadcrumb ol li a:hover {
+                    text-decoration: underline;
+                }
+
+
+span {
+    color: white;
+    padding: 10px 20px;
+    background-color: #8A9C80;
+    cursor: pointer;
+    display: block;
+    font-family: 'Assistant', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+    /* הוספת אפקט הובר */
+    span:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }

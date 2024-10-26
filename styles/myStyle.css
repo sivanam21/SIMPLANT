@@ -1,0 +1,648 @@
+﻿body {
+    font-family: 'Assistant', sans-serif;
+    background-color: #FFFFFF;
+    padding: 0;
+    text-align: right;
+    direction: rtl;
+    margin: 0 auto;
+    width: 1280px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+span {
+    color: white;
+    padding: 10px 20px;
+    background-color: #8A9C80;
+    cursor: pointer;
+    display: block;
+    font-family: 'Assistant', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+    /* הוספת אפקט הובר */
+    span:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+.main-title {
+    color: #8A9C80;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: Assistant, sans-serif;
+}
+
+.centered-text {
+    color: #A4B799;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 20px 0;
+    font-family: Assistant, sans-serif;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    background-color: #FFFFFF;
+    font-family: Assistant, sans-serif;
+}
+
+.text-content {
+    width: 60%;
+}
+
+.secondary-title {
+    color: #C5A690;
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-family: Assistant, sans-serif;
+}
+
+.text-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-family: Assistant, sans-serif;
+}
+
+strong {
+    font-weight: bold;
+    color: #000000;
+    font-family: Assistant, sans-serif;
+}
+
+.image-container {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.green-box {
+    width: 80%;
+    height: 210px;
+    background-color: #DEEAD5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.herbs-img {
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: cover;
+    height: auto;
+    position: absolute;
+    top: 45px;
+    left: 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 1s;
+}
+
+    .herbs-img:hover {
+        transform: scale(1.05);
+    }
+
+/* עיצוב עבור התפריט העליון */
+.nav-header {
+    background-color: #8A9C80;
+    padding: 10px 0;
+}
+
+#top_nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* שיטה לרווח שווה */
+}
+
+    #top_nav ul li {
+        position: relative;
+    }
+
+        #top_nav ul li a {
+            font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        #top_nav ul li:hover a {
+            background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש */
+        }
+
+        /* יישור התפריט הנפתח למרכז הכפתור */
+        #top_nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 40px; /* או גובה הכפתור */
+            left: 50%; /* מתחילים מהמיקום האמצעי */
+            transform: translateX(-50%); /* מזיזים את התפריט חזרה בחצי מהרוחב שלו */
+            background-color: #8A9C80;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+        }
+
+        #top_nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        #top_nav ul li ul.dropdown li {
+            width: 150px;
+        }
+
+            #top_nav ul li ul.dropdown li a.disabled {
+                color: gray; /* צבע אפור */
+                cursor: not-allowed; /* מצביע לא מורשה */
+            }
+
+                #top_nav ul li ul.dropdown li a.disabled:hover {
+                    background-color: transparent; /* אין שינוי ברקע */
+                }
+
+            #top_nav ul li ul.dropdown li a {
+                font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+                padding: 10px;
+                white-space: nowrap;
+            }
+
+                #top_nav ul li ul.dropdown li a:hover {
+                    background-color: rgba(255, 255, 255, 0.3); /* רקע לבן חלש */
+                }
+
+/* עיצוב עבור הפוטר */
+footer {
+    background-color: #8A9C80; /* צבע רקע */
+    padding: 10px 0; /* רווח עליון ותחתון */
+    bottom: 0; /* ממקם את ה-footer בחלק התחתון של הדף */
+    width: 100%; /* להבטיח שה-footer יתפוס את כל רוחב המסך */
+    z-index: 1000; /* שומר שה-footer יהיה מעל לתוכן אחר */
+}
+
+#ul_footer {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* שיטה לרווח שווה */
+}
+
+    #ul_footer li {
+        position: relative;
+    }
+
+        #ul_footer li a {
+            font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+            color: white; /* צבע טקסט */
+            padding: 10px 20px; /* רווח סביב הטקסט */
+            text-decoration: none; /* ביטול קו תחתון */
+            display: block; /* מאפשר להקיף את כל האזור */
+            transition: background-color 0.3s ease; /* מעבר חלק בעת שינוי */
+        }
+
+        #ul_footer li:hover a {
+            background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש בעת מעבר */
+        }
+
+/* עיצוב עבור כותרת הטקסט הראשית */
+.text-header {
+    background-color: none; /* מבטל צבע רקע עבור כותרת הטקסט */
+}
+
+
+
+#container {
+    display: flex;
+    justify-content: center; /* למרכז אופקית */
+    align-items: center; /* למרכז אנכית */
+    text-align: center; /* למרכז את התוכן */
+    flex-direction: column;
+}
+
+section {
+    width: 850px;
+    height: auto;
+    position: relative;
+}
+
+
+#HeroRectangle {
+    width: 100%;
+    height: 450px;
+    background-color: #DEEAD5;
+    position: relative;
+}
+
+.img {
+    display: block;
+}
+
+.leaf {
+    opacity: 0.4;
+}
+
+#hero_img {
+    position: absolute;
+    top: 120px;
+    right: 10%;
+    height: auto;
+    width: 80%;
+    margin: 20px;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+#innerRectangle {
+    position: absolute;
+    width: 700px;
+    height: 300px;
+    background-color: rgba(222, 234, 213, 0.85);
+    top: 180px;
+    right: 290px;
+    z-index: 2;
+    display: flex;
+    justify-content: center; /* למרכז אופקית */
+    align-items: center; /* למרכז אנכית */
+    text-align: center; /* למרכז את התוכן */
+    flex-direction: column;
+}
+
+
+
+    #innerRectangle h1 {
+        font-size: 80px;
+        font-weight: bold;
+        color: rgb(84, 113, 95, 0.8);
+        line-height: 1;
+        font-family: Assistant, sans-serif;
+        margin-bottom: 0px;
+    }
+
+
+    #innerRectangle p {
+        font-size: 32px;
+        font-weight: bold;
+        color: rgb(84, 113, 95, 0.85);
+        font-family: Assistant, sans-serif;
+    }
+
+.middlePage {
+    justify-content: center; /* למרכז אופקית */
+    align-items: center; /* למרכז אנכית */
+    text-align: center;
+    flex-direction: column;
+}
+
+#contactUsLink {
+    width: 100px;
+    height: auto;
+    background-color: rgb(222, 234, 213);
+    position: relative;
+    left: 0;
+    margin: auto;
+    z-index: 2;
+    text-align: center;
+    transition: transform 1s;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+    #contactUsLink p {
+        font-size: 18px;
+        font-family: Assistant, sans-serif;
+        font-weight: bold;
+        color: rgb(84, 113, 95, 0.85);
+        margin: 5px;
+    }
+
+    #contactUsLink:hover {
+        transform: scale(1.20);
+    }
+
+section > h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(84, 113, 95, 0.8);
+    line-height: 1;
+    font-family: Assistant, sans-serif;
+    margin-bottom: 0px;
+}
+
+
+.secondTitle {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(84, 113, 95, 0.8);
+    line-height: 0.5;
+    font-family: Assistant, sans-serif;
+    margin-bottom: 0px;
+}
+
+
+#welcome {
+    margin: 150px 0 0 0;
+}
+
+p {
+    font-size: 18px;
+    font-family: Assistant, sans-serif;
+    font-weight: 400;
+    margin: 30px 0 0 0;
+    line-height: 1.5;
+}
+
+#rightLeaf {
+    position: absolute;
+    left: 840px;
+    top: 80px;
+}
+
+#leftLeaf {
+    position: absolute;
+    right: 880px;
+    top: 10px;
+    width: 140px;
+    height: auto;
+}
+
+#whatsOnTheWebsite {
+    margin: 80px 0 0 0;
+}
+
+/*מדריכים מפורטים*/
+
+
+#bgRectangle1 {
+    width: 224px;
+    height: 227px;
+    background-color: #DEEAD5;
+    margin: 100px 430px 0px 0px;
+    text-align: right;
+    padding: 0 10px;
+    position: relative;
+}
+
+    #bgRectangle1 img {
+        width: 232px;
+        height: 232px;
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+    }
+
+#textRectangle1 {
+    width: 250px;
+    height: 220px;
+    background-color: #FAF0E4;
+    margin: 50px 20px 20px 20px;
+    left: 270px;
+    text-align: right;
+    padding: 0 10px;
+    position: absolute;
+}
+
+
+#textFrame1 {
+    width: 90%;
+    height: 90%;
+    border-style: solid;
+    border-color: #C5A690;
+    border-width: 2px;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    padding: 10px 10px 10px 10px;
+    box-sizing: border-box; /* כדי שה-padding לא ישפיע על גודל האלמנט */
+}
+
+
+
+    #textFrame1 h3 {
+        margin:0;
+        position: absolute;
+        font-size: 20px;
+        font-family: Assistant, sans-serif;
+        font-weight: bold;
+        color: #C5A690;
+    }
+
+/*טיפים לגידול צמחי תבלין*/
+
+#bgRectangle2 {
+    width: 294px;
+    height: 237px;
+    background-color: #DEEAD5;
+    margin: 80px 90px 0px 0px;
+    text-align: right;
+    padding: 0 10px;
+    position: relative;
+}
+
+    #bgRectangle2 img {
+        width: 302px;
+        height: 222px;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+    }
+
+#textRectangle2 {
+    width: 250px;
+    height: 220px;
+    background-color: #FAF0E4;
+    text-align: right;
+    padding: 0 10px;
+    right: 460px;
+    top: 370px;
+    position: absolute;
+}
+
+#textFrame2 {
+    width: 90%;
+    height: 90%;
+    border-style: solid;
+    border-color: #C5A690;
+    border-width: 2px;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    padding: 10px 10px 10px 10px;
+    box-sizing: border-box; /* כדי שה-padding לא ישפיע על גודל האלמנט */
+}
+
+
+    #textFrame2 h3 {
+        margin:0;
+        position: absolute;
+        font-size: 20px;
+        font-family: Assistant, sans-serif;
+        font-weight: bold;
+        color: #C5A690;
+    }
+
+/*השראה ירוקה לכל מקום*/
+
+#bgRectangle3 {
+    width: 219px;
+    height: 319px;
+    background-color: #DEEAD5;
+    text-align: right;
+    padding: 0 10px;
+    position: relative;
+    right: 470px;
+}
+
+    #bgRectangle3 img {
+        width: 229px;
+        height: 329px;
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+    }
+
+#textRectangle3 {
+    width: 250px;
+    height: 220px;
+    background-color: #FAF0E4;
+    text-align: right;
+    padding: 0 10px;
+    position: absolute;
+    top: 690px;
+    right: 140px;
+}
+
+#textFrame3 {
+    width: 90%;
+    height: 90%;
+    border-style: solid;
+    border-color: #C5A690;
+    border-width: 2px;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    padding: 10px 10px 10px 10px;
+    box-sizing: border-box; /* כדי שה-padding לא ישפיע על גודל האלמנט */
+}
+
+
+    #textFrame3 h3 {
+        margin:0;
+        position: absolute;
+        font-size: 20px;
+        font-family: Assistant, sans-serif;
+        font-weight: bold;
+        color: #C5A690;
+    }
+
+#whatsOnTheWebsite #longHorizontialLeaf {
+    position: absolute;
+    left: 820px;
+    top: 530px;
+    width: 160px;
+    height: auto;
+}
+
+#whatsOnTheWebsite #leftLeaf1 {
+    position: absolute;
+    right: 770px;
+    top: 160px;
+    width: 160px;
+    height: auto;
+}
+
+#whatsOnTheWebsite #leftLeaf2 {
+    position: absolute;
+    right: 790px;
+    top: 770px;
+    width: 120px;
+    height: auto;
+}
+
+/*מקטע למה simplant*/
+
+#whySimplant {
+    margin: 80px 0 0 0;
+}
+
+.textBoxMainPage {
+    width: 500px;
+    height: auto;
+    margin: 15px 0 0 0;
+    position: relative;
+}
+
+#whySimplant h3 {
+    margin: 30px 0px 0 0;
+    text-align: right;
+    font-size: 20px;
+    font-family: Assistant, sans-serif;
+    font-weight: bold;
+    color: #C5A690;
+}
+
+#whySimplant p {
+    text-align: right;
+    margin: 5px 0 0 0;
+}
+
+#bgRectangle4 {
+    width: 244px;
+    height: 247px;
+    background-color: #DEEAD5;
+    text-align: right;
+    padding: 0 10px;
+    position: absolute;
+    top: 35px;
+    left: 15px;
+}
+
+    #bgRectangle4 img {
+        width: 252px;
+        height: 252px;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+
+#endMainPage {
+    margin: 80px 0 0 0;
+    position: relative;
+}
+
+#layingLeaf {
+    top: 90px;
+    left: 40%;
+    width: 160px;
+    height: auto;
+    margin-top:30px;
+    margin-bottom:15px;
+}
+
+
+.imgTransition {
+    transition: transform 1s;
+}
+
+    .imgTransition:hover {
+        transform: scale(1.05);
+    }
+
