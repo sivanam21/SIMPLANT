@@ -326,12 +326,13 @@ section {
 }
 
 
-    #contactUsLink p {
+    #contactUsLink a {
         font-size: 18px;
         font-family: Assistant, sans-serif;
         font-weight: bold;
         color: rgb(84, 113, 95, 0.85);
         margin: 5px;
+        text-decoration: none;
     }
 
     #contactUsLink:hover {
