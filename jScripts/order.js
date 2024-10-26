@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         radio.addEventListener('change', changePlantImage);
     });
     document.getElementById('submitButton').addEventListener('click', showOrderSummary);
+    document.getElementById('resetButton').addEventListener('click', resetOrder);
     document.getElementById('orderForm').addEventListener('input', validateForm);
 
     // הפעלת ההארה לתוספות
