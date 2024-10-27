@@ -222,6 +222,13 @@ footer {
             background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש בעת מעבר */
         }
 
+footer p {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
 /* עיצוב עבור כותרת הטקסט הראשית */
 .text-header {
     background-color: none; /* מבטל צבע רקע עבור כותרת הטקסט */
@@ -311,42 +318,6 @@ section {
     flex-direction: column;
 }
 
-#contactUsLink {
-    width: 100px;
-    height: auto;
-    background-color: rgb(222, 234, 213);
-    position: relative;
-    left: 0;
-    margin: auto;
-    z-index: 2;
-    text-align: center;
-    transition: transform 1s;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-
-    #contactUsLink a {
-        font-size: 18px;
-        font-family: Assistant, sans-serif;
-        font-weight: bold;
-        color: rgb(84, 113, 95, 0.85);
-        margin: 5px;
-        text-decoration: none;
-    }
-
-    #contactUsLink:hover {
-        transform: scale(1.20);
-    }
-
-section > h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: rgb(84, 113, 95, 0.8);
-    line-height: 1;
-    font-family: Assistant, sans-serif;
-    margin-bottom: 0px;
-}
 
 
 .secondTitle {
@@ -354,6 +325,16 @@ section > h2 {
     font-weight: bold;
     color: rgb(84, 113, 95, 0.8);
     line-height: 0.5;
+    font-family: Assistant, sans-serif;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+section > h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(84, 113, 95, 0.8);
+    line-height: 1;
     font-family: Assistant, sans-serif;
     margin-bottom: 0px;
 }
@@ -370,6 +351,37 @@ p {
     margin: 30px 0 0 0;
     line-height: 1.5;
 }
+
+#contactUsLink {
+    width: 100px;
+    height: auto;
+    background-color: rgb(222, 234, 213);
+    color: white;
+    position: fixed;
+    left: calc((100% - 1280px) / 2); /* מרחק מהשמאל בהתבסס על הרוחב */
+    top: 550px; /* מרחק מהחלק העליון */
+    z-index: 2;
+    text-align: center;
+    transition: transform 1s;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 8px 0;
+}
+
+
+
+    #contactUsLink > a {
+        font-size: 16px;
+        font-family: Assistant, sans-serif;
+        font-weight: bold;
+        color: rgb(84, 113, 95, 0.85);
+        margin: 5px;
+        text-decoration: none;
+    }
+
+    #contactUsLink:hover {
+        transform: scale(1.20);
+    }
 
 #rightLeaf {
     position: absolute;
@@ -438,7 +450,7 @@ p {
 
 
     #textFrame1 h3 {
-        margin:0;
+        margin: 0;
         position: absolute;
         font-size: 20px;
         font-family: Assistant, sans-serif;
@@ -492,7 +504,7 @@ p {
 
 
     #textFrame2 h3 {
-        margin:0;
+        margin: 0;
         position: absolute;
         font-size: 20px;
         font-family: Assistant, sans-serif;
@@ -546,7 +558,7 @@ p {
 
 
     #textFrame3 h3 {
-        margin:0;
+        margin: 0;
         position: absolute;
         font-size: 20px;
         font-family: Assistant, sans-serif;
@@ -612,7 +624,7 @@ p {
     text-align: right;
     padding: 0 10px;
     position: absolute;
-    top: 35px;
+    top: 45px;
     left: 15px;
 }
 
@@ -634,8 +646,8 @@ p {
     left: 40%;
     width: 160px;
     height: auto;
-    margin-top:30px;
-    margin-bottom:15px;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 
@@ -646,4 +658,3 @@ p {
     .imgTransition:hover {
         transform: scale(1.05);
     }
-

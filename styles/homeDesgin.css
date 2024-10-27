@@ -113,6 +113,13 @@ footer {
             background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש בעת מעבר */
         }
 
+footer p {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
 /* עיצוב עבור כותרת הטקסט הראשית */
 .text-header {
     background-color: none; /* מבטל צבע רקע עבור כותרת הטקסט */
@@ -178,33 +185,44 @@ section {
 }
 
 /* עיצוב כותרות */
-h1, h2, h3 {
-    color: #8A9C80;
-}
+
+
 
 h1 {
+    color: #8A9C80;
     font-size: 28px;
     margin-bottom: 15px;
     text-align: center;
+    font-size: 2.5rem;
 }
 
 h2 {
     font-size: 26px;
     margin-bottom: 20px;
+    color: #C5A690;
 }
 
 h3 {
     font-size: 22px;
     margin-bottom: 10px;
+    color: #8A9C80;
 }
 
 p {
     font-size: 18px;
     font-family: 'Assistant', sans-serif;
     font-weight: 400;
-    margin: 30px 0;
+    margin: 20px 0;
     line-height: 1.5;
 }
+
+section li {
+    font-size: 18px;
+    font-family: 'Assistant', sans-serif;
+    font-weight: 400;
+    line-height: 2;
+}
+
 
 /* עיצוב מקטעי צמחים */
 .plant-section {
@@ -230,7 +248,7 @@ p {
 }
 
     .plant-block img {
-        width: 40%; /* התמונה תתפוס 40% מהרוחב */
+        width: 32%; /* התמונה תתפוס 40% מהרוחב */
         height: auto;
         object-fit: cover;
         margin-left: 15px; /* רווח בין התמונה לטקסט */
@@ -244,7 +262,8 @@ p {
         }
 
 .plant-info {
-    width: 60%; /* הטקסט יתפוס 60% מהרוחב */
+    width: 400px; /* הטקסט יתפוס 60% מהרוחב */
+    height: 230px;
     background-color: #FAF0E4;
     padding: 15px;
     border-radius: 10px;
@@ -283,3 +302,32 @@ p {
     border-radius: 10px;
     text-align: center;
 }
+
+section {
+    margin: 0px 100px;
+}
+
+article header {
+    display: flex;
+    justify-content: center; /* למרכז אופקית */
+    align-items: center; /* למרכז אנכית */
+    text-align: center; /* למרכז את התוכן */
+    flex-direction: column;
+}
+
+header {
+    margin: 0px 0px 50px 0px;
+}
+
+    header section {
+        margin: 0px 50px;
+    }
+
+        header section p {
+            color: #A4B799;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 0;
+            font-family: Assistant, sans-serif;
+        }

@@ -120,6 +120,12 @@ footer {
             background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש בעת מעבר */
         }
 
+footer p {
+    text-align: center;
+    font-size: 14px;
+    color: white; /* את יכולה לשנות את הצבע בהתאם לעיצוב שלך */
+    margin-bottom: 10px;
+}
 
 /* שאר ה-CSS שלך */
 .container {
@@ -134,6 +140,10 @@ footer {
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #8A9C80;
 }
 
 .form-container, .boxes-container {
@@ -199,6 +209,7 @@ button {
     cursor: pointer;
     font-size: 16px;
     text-align: center;
+    font-family: Assistant, sans-serif;
 }
 
 .button-container {
@@ -212,7 +223,7 @@ button {
     }
 
 button:disabled {
-    background-color: #ccc;
+    background-color: rgba(76, 175, 80, 0.5);
     cursor: not-allowed;
 }
 
@@ -280,7 +291,7 @@ button:hover:not(:disabled) {
     text-align: right;
     width: 100%; /* או כל רוחב שתרצי */
     box-sizing: border-box;
-    display: block; /* ודא שהצגת הסיכום פעילה */
+    display: none; /* ודא שהצגת הסיכום פעילה */
 }
 
 /* עיצוב עבור תפריט פירורי לחם */
@@ -328,7 +339,25 @@ span {
     transition: background-color 0.3s ease;
 }
 
-    /* הוספת אפקט הובר */
-    span:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
+/* הוספת אפקט הובר */
+span:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#mustFill {
+    color: red;
+}
+
+#nameError {
+    color: red;
+    display: none;
+}
+
+#numberError {
+    color: red;
+    display: none;
+}
+
+#thankYouMessage {
+    display: none;
+}

@@ -16,7 +16,7 @@
 .main-title {
     color: #8A9C80;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 36px;
     font-weight: bold;
     margin-top: 20px;
     font-family: Assistant, sans-serif;
@@ -26,7 +26,7 @@
     color: #A4B799;
     font-weight: bold;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 18px;
     margin: 20px 0;
     font-family: Assistant, sans-serif;
 }
@@ -206,6 +206,13 @@ footer {
         #ul_footer li:hover a {
             background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש בעת מעבר */
         }
+
+footer p {
+    text-align: center;
+    font-size: 14px;
+    color: white; /* את יכולה לשנות את הצבע בהתאם לעיצוב שלך */
+    margin-bottom: 10px;
+}
 
 /* עיצוב עבור כותרת הטקסט הראשית */
 .text-header {

@@ -2,7 +2,7 @@
 <html lang="he">
 <head>
     <meta charset="utf-8" />
-    <title>הזמנה - SIMPLANT</title>
+    <title>הזמן מהחנות - SIMPLANT</title>
     <link rel="icon" href="photos/pothos_4900153.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="keywords" content="הזמנה, תוספות, סוקולנט ורוד, שושן כתום, סחלב כחול, צמחים, גידול צמחים, צמחי בית, חנות צמחים אונליין, רכישת צמחים, SIMPLANT" />
@@ -21,19 +21,19 @@
                 <li>
                     <span>גידול צמחים</span>
                     <ul class="dropdown">
-                        <li><a href="plantCultivation.html">גידול צמחי תבלין</a></li> <!-- לינק לעמוד yael.html -->
-                        <li><a href="#noLink" class="noLink disabled">גידול צמחי מרפא</a></li> <!-- אופציה אפורה -->
-                        <li><a href="#noLink" class="noLink disabled">גידול צמחים מטפסים</a></li> <!-- אופציה אפורה -->
+                        <li><a href="plantCultivation.html">גידול צמחי תבלין</a></li>
+                        <li><a href="#noLink" class="noLink disabled">גידול צמחי מרפא</a></li>
+                        <li><a href="#noLink" class="noLink disabled">גידול צמחים מטפסים</a></li>
                     </ul>
                 </li>
                 <li>
-                    <span>גידול הצמחים כחלק משגרת חיינו</span>
+                    <span>המדריך לסביבות גידול צמחים</span>
                     <ul class="dropdown">
-                        <li><a href="homeDesgin.html">עיצוב הבית</a></li>
-                        <li><a href="#noLink" class="noLink disabled">שמירה על הבריאות</a></li> <!-- אופציה אפורה -->
+                        <li><a href="homeDesgin.html">צמחי פנים</a></li>
+                        <li><a href="#noLink" class="noLink disabled">צמחי חוץ</a></li>
                     </ul>
                 </li>
-                <li><a href="order.html">הזמן מהחנות</a></li> <!-- כפתור לקישור לדף הזמנה -->
+                <li><a href="order.html">הזמן מהחנות</a></li>
             </ul>
         </nav>
     </header>
@@ -48,18 +48,19 @@
     <div class="container">
         <div class="form-container">
             <form id="orderForm">
-                <h1>משתלם לגלוש באתר SIMPLANT</h1>
+                <h1>הזמן מהחנות</h1>
                 <p>אנו שמחים להעניק לכם הזדמנות מיוחדת לרכוש את אחד מהצמחים הייחודיים של החנות במחיר בלעדי בהזמנת אונליין באתר.</p>
 
-                <label for="fullName">שם מלא: <a style="color: red;">*</a></label>
+                <label for="fullName">שם מלא: <a id="mustFill">*</a></label>
                 <input type="text" id="fullName" name="fullName" placeholder="הכנס את שמך" required>
-                <a id="nameError" style="color: red; display: none;">שם חייב להיות מורכב מאותיות בלבד ולפחות שני תווים</a>
+                <a id="nameError">שם חייב להיות מורכב מאותיות בלבד ולפחות שני תווים</a>
 
-                <label for="number">הזן מספר כרטיס אשראי (4 ספרות): <a style="color: red;">*</a></label>
+                <label for="number">הזן מספר כרטיס אשראי (4 ספרות): <a id="mustFill">*</a></label>
                 <input type="number" id="number" name="number" placeholder="הכנס מספר אשראי" required>
-                <a id="numberError" style="color: red; display: none;">מספר כרטיס האשראי חייב להיות בדיוק 4 ספרות</a>
+                <a id="numberError">מספר כרטיס האשראי חייב להיות בדיוק 4 ספרות</a>
 
-                <label>בחר את הצמח אותו תרצה להזמין (מחיר כל צמח - 50 ש"ח): <a style="color: red;">*</a></label>
+                <!-- כפתורי הבחירה לשם בחירת הצמח -->
+                <label>בחר את הצמח אותו תרצה להזמין (מחיר כל צמח - 50 ש"ח):  <a id="mustFill">*</a></label>
                 <div class="radio-options">
                     <input type="radio" id="succulent" name="plant" value="סוקולנט ורוד" required> סוקולנט ורוד
                     <input type="radio" id="orchid" name="plant" value="סחלב כחול" required> סחלב כחול
@@ -74,8 +75,8 @@
                 </div>
             </form>
 
-            <div id="orderSummary" style="display: none;"></div>
-            <div id="thankYouMessage" style="display: none;"></div>
+            <div id="orderSummary"></div>
+            <div id="thankYouMessage"></div>
             <div class="button-container">
                 <button type="button" id="submitButton" disabled>אישור והזמנה</button>
                 <button type="button" id="resetButton" disabled>איפוס הזמנה וחזרה לאתר</button>
@@ -86,7 +87,7 @@
             <div class="box">
                 <h2>הצמח שלי</h2>
                 <div id="plantDisplay">
-                    <img id="plantImage" >
+                    <img id="plantImage">
                 </div>
             </div>
 
@@ -101,7 +102,9 @@
         </div>
     </div>
 
+    <!-- Footer Section -->
     <footer>
+        <p>Images by Freepik</p>
         <nav aria-label="Footer_Nav" id="bottom_nav">
             <ul id="ul_footer">
                 <li><a href="siteMap.html">מפת האתר</a></li>
@@ -110,5 +113,6 @@
             </ul>
         </nav>
     </footer>
+
 </body>
 </html>

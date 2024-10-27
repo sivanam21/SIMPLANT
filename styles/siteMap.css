@@ -20,6 +20,10 @@
     border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
+h1 {
+    color: #8A9C80;
+}
+
 
 /* מרכז את מפת האתר בלבד */
 .columns-container {
@@ -88,7 +92,7 @@ header {
             top: 40px; /* או גובה הכפתור */
             left: 50%; /* מתחילים מהמיקום האמצעי */
             transform: translateX(-50%); /* מזיזים את התפריט חזרה בחצי מהרוחב שלו */
-            background-color: #758D7F;
+            background-color: #8A9C80;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -158,6 +162,7 @@ footer {
         #ul_footer li:hover a {
             background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש בעת מעבר */
         }
+
 
 /* עיצוב עבור תפריט פירורי לחם */
 nav.breadcrumb {
