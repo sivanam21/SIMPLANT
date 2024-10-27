@@ -18,7 +18,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around; /* שיטה לרווח שווה */
+    justify-content: space-around; 
 }
 
     #top_nav ul li {
@@ -26,7 +26,7 @@
     }
 
         #top_nav ul li a {
-            font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+            font-family: 'Assistant', sans-serif; 
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -35,16 +35,16 @@
         }
 
         #top_nav ul li:hover a {
-            background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש */
+            background-color: rgba(255, 255, 255, 0.2); 
         }
 
         /* יישור התפריט הנפתח למרכז הכפתור */
         #top_nav ul li ul.dropdown {
             display: none;
             position: absolute;
-            top: 40px; /* או גובה הכפתור */
-            left: 50%; /* מתחילים מהמיקום האמצעי */
-            transform: translateX(-50%); /* מזיזים את התפריט חזרה בחצי מהרוחב שלו */
+            top: 40px; 
+            left: 50%; 
+            transform: translateX(-50%); 
             background-color: #8A9C80;
             list-style: none;
             padding: 0;
@@ -61,31 +61,31 @@
         }
 
             #top_nav ul li ul.dropdown li a.disabled {
-                color: gray; /* צבע אפור */
-                cursor: not-allowed; /* מצביע לא מורשה */
+                color: gray; 
+                cursor: not-allowed; 
             }
 
                 #top_nav ul li ul.dropdown li a.disabled:hover {
-                    background-color: transparent; /* אין שינוי ברקע */
+                    background-color: transparent; 
                 }
 
             #top_nav ul li ul.dropdown li a {
-                font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+                font-family: 'Assistant', sans-serif; 
                 padding: 10px;
                 white-space: nowrap;
             }
 
                 #top_nav ul li ul.dropdown li a:hover {
-                    background-color: rgba(255, 255, 255, 0.3); /* רקע לבן חלש */
+                    background-color: rgba(255, 255, 255, 0.3); 
                 }
 
 /* עיצוב עבור הפוטר */
 footer {
-    background-color: #8A9C80; /* צבע רקע */
-    padding: 10px 0; /* רווח עליון ותחתון */
-    bottom: 0; /* ממקם את ה-footer בחלק התחתון של הדף */
-    width: 100%; /* להבטיח שה-footer יתפוס את כל רוחב המסך */
-    z-index: 1000; /* שומר שה-footer יהיה מעל לתוכן אחר */
+    background-color: #8A9C80; 
+    padding: 10px 0; 
+    bottom: 0;
+    width: 100%; 
+    z-index: 1000; 
 }
 
 #ul_footer {
@@ -93,7 +93,7 @@ footer {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around; /* שיטה לרווח שווה */
+    justify-content: space-around; 
 }
 
     #ul_footer li {
@@ -101,16 +101,16 @@ footer {
     }
 
         #ul_footer li a {
-            font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
-            color: white; /* צבע טקסט */
-            padding: 10px 20px; /* רווח סביב הטקסט */
-            text-decoration: none; /* ביטול קו תחתון */
-            display: block; /* מאפשר להקיף את כל האזור */
-            transition: background-color 0.3s ease; /* מעבר חלק בעת שינוי */
+            font-family: 'Assistant', sans-serif; 
+            color: white; 
+            padding: 10px 20px;
+            text-decoration: none; 
+            display: block; 
+            transition: background-color 0.3s ease; 
         }
 
         #ul_footer li:hover a {
-            background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש בעת מעבר */
+            background-color: rgba(255, 255, 255, 0.2); 
         }
 
 footer p {
@@ -122,7 +122,7 @@ footer p {
 
 /* עיצוב עבור כותרת הטקסט הראשית */
 .text-header {
-    background-color: none; /* מבטל צבע רקע עבור כותרת הטקסט */
+    background-color: none; 
 }
 
 /* עיצוב עבור תפריט פירורי לחם */
@@ -170,7 +170,6 @@ span {
     transition: background-color 0.3s ease;
 }
 
-    /* הוספת אפקט הובר */
     span:hover {
         background-color: rgba(255, 255, 255, 0.2);
     }
@@ -236,55 +235,55 @@ section li {
 
 .plant-block {
     display: flex;
-    flex-direction: row-reverse; /* התמונה בצד ימין והטקסט בצד שמאל */
+    flex-direction: row-reverse; 
     background-color: #DEEAD5;
     padding: 15px;
     border-radius: 10px;
     align-items: center;
-    width: calc(50% - 20px); /* כל בלוק יתפוס 50% מהרוחב */
-    max-width: 600px; /* רוחב מקסימלי */
+    width: calc(50% - 20px); 
+    max-width: 600px; 
     box-sizing: border-box;
-    margin-bottom: 20px; /* רווח בין הבלוקים */
+    margin-bottom: 20px; 
 }
 
     .plant-block img {
-        width: 32%; /* התמונה תתפוס 40% מהרוחב */
+        width: 32%; 
         height: auto;
         object-fit: cover;
-        margin-left: 15px; /* רווח בין התמונה לטקסט */
+        margin-left: 15px;
         border-radius: 10px;
-        transition: transform 0.5s ease; /* אפקט מעבר */
+        transition: transform 0.5s ease; 
     }
 
         .plant-block img:hover,
         .image-row img:hover {
-            transform: scale(1.05); /* אפקט הגדלה על כל התמונות */
+            transform: scale(1.05); 
         }
 
 .plant-info {
-    width: 400px; /* הטקסט יתפוס 60% מהרוחב */
+    width: 400px; 
     height: 230px;
     background-color: #FAF0E4;
     padding: 15px;
     border-radius: 10px;
-    text-align: left; /* יישור טקסט לשמאל */
+    text-align: left; 
 }
 
 
 
 .image-row {
     display: flex;
-    justify-content: center; /* מרכז את התמונות */
-    flex-wrap: wrap; /* מאפשר לתמונות לעבור לשורה חדשה במסכים קטנים */
-    gap: 20px; /* רווח בין התמונות */
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 20px; 
     margin: 20px 0;
 }
 
     .image-row img {
         width: 100%;
-        max-width: 300px; /* גודל אחיד לתמונות */
+        max-width: 300px; 
         height: auto;
-        object-fit: cover; /* ממלא את התמונה בצורה אחידה */
+        object-fit: cover; 
         transition: transform 0.5s ease;
         border-radius: 10px;
     }
@@ -292,7 +291,7 @@ section li {
 .large-image {
     width: 100%;
     height: auto;
-    max-width: 500px; /* שולט בגודל התמונה */
+    max-width: 500px; 
 }
 
 /* עיצוב מידע על הצמחים */
@@ -309,9 +308,9 @@ section {
 
 article header {
     display: flex;
-    justify-content: center; /* למרכז אופקית */
-    align-items: center; /* למרכז אנכית */
-    text-align: center; /* למרכז את התוכן */
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
     flex-direction: column;
 }
 

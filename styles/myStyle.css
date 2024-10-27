@@ -23,7 +23,6 @@ span {
     transition: background-color 0.3s ease;
 }
 
-    /* הוספת אפקט הובר */
     span:hover {
         background-color: rgba(255, 255, 255, 0.2);
     }
@@ -127,7 +126,7 @@ strong {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around; /* שיטה לרווח שווה */
+    justify-content: space-around; 
 }
 
     #top_nav ul li {
@@ -135,7 +134,7 @@ strong {
     }
 
         #top_nav ul li a {
-            font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+            font-family: 'Assistant', sans-serif; 
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -144,15 +143,14 @@ strong {
         }
 
         #top_nav ul li:hover a {
-            background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש */
+            background-color: rgba(255, 255, 255, 0.2); 
         }
 
-        /* יישור התפריט הנפתח למרכז הכפתור */
         #top_nav ul li ul.dropdown {
             display: none;
             position: absolute;
-            top: 40px; /* או גובה הכפתור */
-            left: 50%; /* מתחילים מהמיקום האמצעי */
+            top: 40px;
+            left: 50%; 
             transform: translateX(-50%); /* מזיזים את התפריט חזרה בחצי מהרוחב שלו */
             background-color: #8A9C80;
             list-style: none;
@@ -170,31 +168,31 @@ strong {
         }
 
             #top_nav ul li ul.dropdown li a.disabled {
-                color: gray; /* צבע אפור */
-                cursor: not-allowed; /* מצביע לא מורשה */
+                color: gray;
+                cursor: not-allowed; 
             }
 
                 #top_nav ul li ul.dropdown li a.disabled:hover {
-                    background-color: transparent; /* אין שינוי ברקע */
+                    background-color: transparent; 
                 }
 
             #top_nav ul li ul.dropdown li a {
-                font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+                font-family: 'Assistant', sans-serif; 
                 padding: 10px;
                 white-space: nowrap;
             }
 
                 #top_nav ul li ul.dropdown li a:hover {
-                    background-color: rgba(255, 255, 255, 0.3); /* רקע לבן חלש */
+                    background-color: rgba(255, 255, 255, 0.3); 
                 }
 
 /* עיצוב עבור הפוטר */
 footer {
-    background-color: #8A9C80; /* צבע רקע */
-    padding: 10px 0; /* רווח עליון ותחתון */
-    bottom: 0; /* ממקם את ה-footer בחלק התחתון של הדף */
-    width: 100%; /* להבטיח שה-footer יתפוס את כל רוחב המסך */
-    z-index: 1000; /* שומר שה-footer יהיה מעל לתוכן אחר */
+    background-color: #8A9C80; 
+    padding: 10px 0; 
+    bottom: 0; 
+    width: 100%; 
+    z-index: 1000; 
 }
 
 #ul_footer {
@@ -202,7 +200,7 @@ footer {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around; /* שיטה לרווח שווה */
+    justify-content: space-around; 
 }
 
     #ul_footer li {
@@ -210,16 +208,16 @@ footer {
     }
 
         #ul_footer li a {
-            font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
-            color: white; /* צבע טקסט */
-            padding: 10px 20px; /* רווח סביב הטקסט */
-            text-decoration: none; /* ביטול קו תחתון */
-            display: block; /* מאפשר להקיף את כל האזור */
-            transition: background-color 0.3s ease; /* מעבר חלק בעת שינוי */
+            font-family: 'Assistant', sans-serif; 
+            color: white; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            display: block; 
+            transition: background-color 0.3s ease; 
         }
 
         #ul_footer li:hover a {
-            background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש בעת מעבר */
+            background-color: rgba(255, 255, 255, 0.2); 
         }
 
 footer p {
@@ -231,16 +229,16 @@ footer p {
 
 /* עיצוב עבור כותרת הטקסט הראשית */
 .text-header {
-    background-color: none; /* מבטל צבע רקע עבור כותרת הטקסט */
+    background-color: none; 
 }
 
 
 
 #container {
     display: flex;
-    justify-content: center; /* למרכז אופקית */
-    align-items: center; /* למרכז אנכית */
-    text-align: center; /* למרכז את התוכן */
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
     flex-direction: column;
 }
 
@@ -286,9 +284,9 @@ section {
     right: 290px;
     z-index: 2;
     display: flex;
-    justify-content: center; /* למרכז אופקית */
-    align-items: center; /* למרכז אנכית */
-    text-align: center; /* למרכז את התוכן */
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
     flex-direction: column;
 }
 
@@ -312,8 +310,8 @@ section {
     }
 
 .middlePage {
-    justify-content: center; /* למרכז אופקית */
-    align-items: center; /* למרכז אנכית */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     flex-direction: column;
 }
@@ -358,8 +356,8 @@ p {
     background-color: rgb(222, 234, 213);
     color: white;
     position: fixed;
-    left: calc((100% - 1280px) / 2); /* מרחק מהשמאל בהתבסס על הרוחב */
-    top: 550px; /* מרחק מהחלק העליון */
+    left: calc((100% - 1280px) / 2); /*חישוב מדויק למיקום אלמנט*/
+    top: 550px;
     z-index: 2;
     text-align: center;
     transition: transform 1s;
@@ -444,7 +442,7 @@ p {
     right: 12px;
     top: 10px;
     padding: 10px 10px 10px 10px;
-    box-sizing: border-box; /* כדי שה-padding לא ישפיע על גודל האלמנט */
+    box-sizing: border-box; 
 }
 
 
@@ -499,7 +497,7 @@ p {
     right: 12px;
     top: 10px;
     padding: 10px 10px 10px 10px;
-    box-sizing: border-box; /* כדי שה-padding לא ישפיע על גודל האלמנט */
+    box-sizing: border-box; 
 }
 
 
@@ -553,7 +551,7 @@ p {
     right: 12px;
     top: 10px;
     padding: 10px 10px 10px 10px;
-    box-sizing: border-box; /* כדי שה-padding לא ישפיע על גודל האלמנט */
+    box-sizing: border-box; 
 }
 
 

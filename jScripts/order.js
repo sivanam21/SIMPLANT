@@ -1,6 +1,6 @@
 ﻿// יצירת משתנים גלובאליים לאלמנטים כך שיהיה נוח להשתמש בהם בכלל הפונקציות בקוד במקום להקליד מחדש בכל פעם את האורך המלא
 var fullNameInput = document.getElementById('fullName'); //אלמנט שדה השם המלא
-var numberInput = document.getElementById('number'); //אלמנט שה מספר האשראי
+var numberInput = document.getElementById('number'); //אלמנט שדה מספר האשראי
 var submitButtonElement = document.getElementById('submitButton'); //אלמנט כפתור אישור והזמנה
 var resetButtonElement = document.getElementById('resetButton'); // אלמנט כפתור איפוס הזמנה וחזרה לאתר
 
@@ -16,7 +16,7 @@ function validateForm() { //פונקציית בדיקה שכלל שדות החו
         isNameValid = true; //הגדרת המשתנה שמעיד על תקינות ההזנה בשדה השם כתקין
     }
     if (fullName != "") { //תנאי לבדיקה שהשדה לא ריק. אם המשתמש טרם החל להזין מידע אין צורך להציג לו שגיאה
-        showError('fullName', 'nameError', isNameValid); //הפעלת פונקצית הצגת השגיאה למול הפרמטרים הרלוונטיים לשדה השם המלא
+        showError('fullName', 'nameError', isNameValid); //הפעלת פונקצית הצגת השגיאה / הסתרת שגיאה למול הפרמטרים הרלוונטיים לשדה השם המלא
     }
 
     // בדיקת תקינות המספר
@@ -25,7 +25,7 @@ function validateForm() { //פונקציית בדיקה שכלל שדות החו
         isNumberValid = true;//הגדרת המשתנה שמעיד על תקינות ההזנה בשדה מספר האשראי כתקין
     }
     if (number != "") { //תנאי לבדיקה שהשדה לא ריק. אם המשתמש טרם החל להזין מידע אין צורך להציג לו שגיאה
-        showError('number', 'numberError', isNumberValid);//הפעלת פונקצית הצגת השגיאה למול הפרמטרים הרלוונטיים לשדה מספר כרטיס האשראי
+        showError('number', 'numberError', isNumberValid);//הפעלת פונקצית הצגת השגיאה / הסתרת שגיאה למול הפרמטרים  הרלוונטיים לשדה מספר כרטיס האשראי
     }
 
     // בדיקת בחירת הצמח
@@ -36,14 +36,15 @@ function validateForm() { //פונקציית בדיקה שכלל שדות החו
 
     changePlantImage(); //הפעלת הפונקציה שמשנה את תמונת הצמח למול סוג הצמח שנבחר
 
-    // בודק אם כל השדות תקינים
+    // בדיקה האם כל השדות תקינים
     if (isNameValid && isNumberValid && isPlantValid) { //תנאי שבודק האם כל אחד מהמשתנים שמסכם את תקינות השדות הוא תקין - true
-        submitButtonElement.disabled = false; // הופך את הכפתור לפעיל אם הכל תקין
+        submitButtonElement.disabled = false; // הופך את הכפתור לפעיל אם הכל תקין. בשלב זה ישתנה עיצוב הכפתור בהתאם להגדרות ה-CSS כשהוא לא ב-disable
         return true; //הפונקציה תחזיר ערך סופי שאומר שכל הבדיקות היו תקינות
     } else {
         submitButtonElement.disabled = true; // שומר על הכפתור לא פעיל אם יש שגיאות
+        return false; //הפונקציה תחזיר ערך סופי שאומר שלא כל הבדיקות היו תקינות
+       
     }
-    return false;
 
 }
 
@@ -69,26 +70,26 @@ function isPlantSelected() { //מחזירה true אם אחד מהצמחים סו
         document.getElementById('lily').checked;
 }
 
-// פונקציה להצגת שגיאה ולהחזרת תוצאה על בסיס תקינות
+// פונקציה להצגת / הסתרת שגיאה על בסיס תקינות
 function showError(inputId, errorId, valid) { //הגדרת פרמטרים לשימוש
-    if (valid == false) { // אם הפרמטר שיוזן במקום וליד יהיה בעל ערך "לא תקין" יתבצעו השינויים בעיצוב ולמעשה תוצג הודעת שגיאה
-        document.getElementById(errorId).style.display = 'block';
-        document.getElementById(inputId).style.border = '2px solid red';
-    } else { // אם הפרמטר שיוזן במקום וליד יהיה בעל ערך חאר, כלומר "תקין"  יתבצעו השינויים בעיצוב ולמעשה לא תוצג הודעת שגיאה
-        document.getElementById(errorId).style.display = 'none';
-        document.getElementById(inputId).style.border = '';
+    if (valid == false) { // אם הפרמטר שיוזן במקום הפרמטר השלישי יהיה בעל ערך "לא תקין" יתבצעו השינויים בעיצוב ולמעשה תוצג הודעת שגיאה
+        document.getElementById(errorId).style.display = 'block'; //שינוי הגדרות עיצוב להצגת טקסט השגיאה
+        document.getElementById(inputId).style.border = '2px solid red'; //שינוי הגדרות עיצוב למסגרת שדה השגיאה 
+    } else { // אם הפרמטר שיוזן במקום השלישי יהיה בעל ערך אחר, כלומר "תקין", יתבצעו השינויים בעיצוב ולמעשה לא תוצג הודעת שגיאה
+        document.getElementById(errorId).style.display = 'none';//ללא הצגת הטקסט
+        document.getElementById(inputId).style.border = ''; //ללא גבול השגיאה בשדה
     }
 }
 
 // פונקציה להצגת סיכום ההזמנה אם הכל תקין
 function showOrderSummary() {
-    if (validateForm()) {
-        var name = fullNameInput.value;
-        var number = numberInput.value;
-        var selectedPlant = isPlantSelected(); // ??
+    if (validateForm()) { //בדיקה האם פונקצית בדיקות התקינות של השדות החזירה שהכל תקין
+        var name = fullNameInput.value; //יצירת משתנה לערך שבשדה השם. לא נוצר גלובאלי לאור כך שנדרשות קודם בדיקות התקינות
+        var number = numberInput.value;//יצירת משתנה לערך שבשדה מספר האשראי. לא נוצר גלובאלי לאור כך שנדרשות קודם בדיקות התקינות
 
-        var plant = "";
-        if (document.getElementById("succulent").checked) {
+        var plant = ""; //יצירת משתנה לסוג הצמח שייבחר
+        //תנאי - שמירת שם הצמח הנבחר במשתנה 
+        if (document.getElementById("succulent").checked) {  
             plant = "סוקולנט ורוד";
         } else if (document.getElementById("orchid").checked) {
             plant = "סחלב כחול";
@@ -96,21 +97,27 @@ function showOrderSummary() {
             plant = "שושן כתום";
         }
 
-        var accessories = [];
-        var total = 50;
+        var accessories = []; // מערך ריק עבור התוספות
+        var total = 50; // המחיר ההתחלתי לצמח
 
-        // בדיקת התוספות שנבחרו והוספה למערך בצורה רגילה
-        if (document.getElementById('accessory1').checked) {
-            accessories[0] = "אגרטל - 20 ש\"ח";
+        // בדיקת כל תוספת והוספה למערך בתור הבא אם התוספת סומנה 
+        var index = 0; // משתנה שמציין את המיקום הבא הפנוי במערך
+        //תנאי אם סומנה תוספת - להכניס את הפרטים שלה למערך, להעלות את משתנה הסכום לתשלום ולהעלות ב-1 את המיקום הבא הפנוי במערך כדי שתהיה אפשרות להכניס את התוספות הבאות. שלושת התנאים באותו הקונספט.
+        //"הוספת תו / על מנת לאפשר את הגרשיים בטקסט "שקלים חדשים
+        if (document.getElementById('accessory1').checked) { 
+            accessories[index] = "אגרטל - 20 ש\"ח";
             total += 20;
+            index++;
         }
         if (document.getElementById('accessory2').checked) {
-            accessories[1] = "חצץ ייחודי - 10 ש\"ח";
+            accessories[index] = "חצץ ייחודי - 10 ש\"ח";
             total += 10;
+            index++;
         }
         if (document.getElementById('accessory3').checked) {
-            accessories[2] = "תרסיס הדברה - 30 ש\"ח";
+            accessories[index] = "תרסיס הדברה - 30 ש\"ח";
             total += 30;
+            index++;
         }
 
         // הצגת סיכום ההזמנה
@@ -121,33 +128,35 @@ function showOrderSummary() {
             "<p>תוספות: " + accessories.join(", ") + "</p>" +
             "<p>סה\"כ לתשלום: " + total.toString() + " ש\"ח</p>";
 
-        document.getElementById('orderSummary').innerHTML = orderSummary;
-        document.getElementById('orderSummary').style.display = 'block';
+        document.getElementById('orderSummary').innerHTML = orderSummary;//הצגת סיכום ההזמנה ב-html
+        document.getElementById('orderSummary').style.display = 'block'; //הגדרת עיצוב להצגת סיכום ההזמנה, הדיפולטיבי הוא none
 
-        disableForm();
+        disableForm(); //קריאה לפונקציה שחוסמת את כל השדות למילוי בעת הצגת הסיכום
     }
 }
-
-function updateAccessoryImage(accessoryId, imageId) {
-    let accessory = document.getElementById(accessoryId);
-    let image = document.getElementById(imageId);
-
-    if (accessory.checked) {
-        image.style.opacity = '1';  // התמונה תואר כאשר נבחרה התוספת
+//פונקציה לשינוי תמונת התוספות למול התוספת שנבחרה
+function updateAccessoryImage(accessoryId, imageId) { 
+    if (document.getElementById(accessoryId).checked) {
+        document.getElementById(imageId).style.opacity = '1';  // התמונה תואר כאשר נבחרה התוספת
     } else {
-        image.style.opacity = '0.5';  // התמונה תוחשך כאשר לא נבחרה התוספת
+        document.getElementById(imageId).style.opacity = '0.5';  // התמונה תוחשך כאשר לא נבחרה התוספת
     }
 }
 
 // הוספת מאזינים לאירועים
 document.addEventListener('DOMContentLoaded', function () { //
-    document.getElementById('submitButton').addEventListener('click', showOrderSummary); //כאשר הכפתור יילחץ - תופעל הפונקציה ששמה רשום
-    document.getElementById('resetButton').addEventListener('click', resetOrder); //כאשר הכפתור יילחץ - תופעל הפונקציה ששמה רשום
+    document.getElementById('submitButton').addEventListener('click', showOrderSummary); //כאשר כפתור אישור ההזנה יילחץ - תופעל הפונקציה הצגת סיכום ההזמנה
+    document.getElementById('resetButton').addEventListener('click', resetOrder); //כאשר הכפתור איפוס הזמנה יילחץ - תופעל הפונקציה שמאפסת את העמוד והשדות
 
-    // האזנה ל-input בכל השדות לצורך בדיקת תקינות בזמן אמת
+    // האזנה לאירועים המתרחשים בכל השדות לצורך בדיקת תקינות בזמן אמת - הזנת טקסט / סימון כפתור וכדומה. בעת זיהוי התרחשות האירוע תופעל הפונקציה שבודקת תקינות 
     fullNameInput.addEventListener('input', validateForm);
     numberInput.addEventListener('input', validateForm);
-    document.getElementById('accessory1').addEventListener('change', function () {
+    document.getElementById("succulent").addEventListener('change', validateForm);
+    document.getElementById("orchid").addEventListener('change', validateForm);
+    document.getElementById("lily").addEventListener('change', validateForm);
+
+    // האזנה לאירועים המתרחשים בכל השדות לצורך בדיקת תקינות בזמן אמת - סימון / הסרת סימון מכפתור. בעת זיהוי התרחשות האירוע תופעל הפונקציה שמחליפה לתמונה המתאימה
+    document.getElementById('accessory1').addEventListener('change', function () { 
         updateAccessoryImage('accessory1', 'accessoryImage1');
     });
     document.getElementById('accessory2').addEventListener('change', function () {
@@ -157,33 +166,28 @@ document.addEventListener('DOMContentLoaded', function () { //
         updateAccessoryImage('accessory3', 'accessoryImage3');
     });
 
-    document.getElementById("succulent").addEventListener('change', validateForm);
-    document.getElementById("orchid").addEventListener('change', validateForm);
-    document.getElementById("lily").addEventListener('change', validateForm);
-
-    // כיבוי כפתור איפוס בהתחלה
-    resetButton.disabled = true;
-});
+});     
 
 // פונקציה להפיכת השדות ללא פעילים
 function disableForm() {
-        fullNameInput.disabled = true;
+    //הפיכת השדות ללא זמינים
+        fullNameInput.disabled = true; 
         numberInput.disabled = true;
         document.getElementById("succulent").disabled = true;
         document.getElementById("orchid").disabled = true;
         document.getElementById("lily").disabled = true;
 
-        // גישה ישירה לכל תיבת סימון לפי id
+        // גישה ישירה לכל תיבת סימון לפי id וביטול הזמינות שלה 
         document.getElementById('accessory1').disabled = true;
         document.getElementById('accessory2').disabled = true;
         document.getElementById('accessory3').disabled = true;
 
-        submitButton.disabled = true;
-        resetButton.disabled = false;
+        submitButton.disabled = true; // ביטול זמינות כפתור אישור ההזמנה
+        resetButton.disabled = false;// הפיכת כפתור איפוס ההזמנה לזמין
     }
 
 // פונקציה לאיפוס הטופס והזמנה מחדש על ידי רענון הדף
 function resetOrder() {
-        document.getElementById('orderSummary').style.display = 'none';
-        location.reload();
+        document.getElementById('orderSummary').style.display = 'none'; //הסתרת סיכום ההזמנה
+        location.reload();//פונקציה שמטרתה לרענן את העמוד ובכך מאפסת את כל השדות
     }

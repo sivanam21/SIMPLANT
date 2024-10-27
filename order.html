@@ -13,7 +13,6 @@
     <script src="jScripts/order.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav id="top_nav">
             <ul>
@@ -38,71 +37,71 @@
         </nav>
     </header>
 
-    <nav class="breadcrumb">
-        <ol>
-            <li><a href="index.html">דף הבית</a></li>
-            <li><a href="order.html">הזמן מהחנות</a></li>
-        </ol>
-    </nav>
+    <maim>
+        <nav class="breadcrumb">
+            <ol>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="order.html">הזמן מהחנות</a></li>
+            </ol>
+        </nav>
 
-    <div class="container">
-        <div class="form-container">
-            <form id="orderForm">
-                <h1>הזמן מהחנות</h1>
-                <p>אנו שמחים להעניק לכם הזדמנות מיוחדת לרכוש את אחד מהצמחים הייחודיים של החנות במחיר בלעדי בהזמנת אונליין באתר.</p>
+        <div class="container">
+            <div class="form-container">
+                <form id="orderForm">
+                    <h1>הזמן מהחנות</h1>
+                    <p>אנו שמחים להעניק לכם הזדמנות מיוחדת לרכוש את אחד מהצמחים הייחודיים של החנות במחיר בלעדי בהזמנת אונליין באתר.</p>
 
-                <label for="fullName">שם מלא: <a id="mustFill">*</a></label>
-                <input type="text" id="fullName" name="fullName" placeholder="הכנס את שמך" required>
-                <a id="nameError">שם חייב להיות מורכב מאותיות בלבד ולפחות שני תווים</a>
+                    <label for="fullName">שם מלא: <a id="mustFill">*</a></label>
+                    <input type="text" id="fullName" name="fullName" placeholder="הכנס את שמך" required>
+                    <a id="nameError">שם חייב להיות מורכב מאותיות בלבד ולפחות שני תווים</a>
 
-                <label for="number">הזן מספר כרטיס אשראי (4 ספרות): <a id="mustFill">*</a></label>
-                <input type="number" id="number" name="number" placeholder="הכנס מספר אשראי" required>
-                <a id="numberError">מספר כרטיס האשראי חייב להיות בדיוק 4 ספרות</a>
+                    <label for="number">הזן מספר כרטיס אשראי (4 ספרות): <a id="mustFill">*</a></label>
+                    <input type="number" id="number" name="number" placeholder="הכנס מספר אשראי" required>
+                    <a id="numberError">מספר כרטיס האשראי חייב להיות בדיוק 4 ספרות</a>
 
-                <!-- כפתורי הבחירה לשם בחירת הצמח -->
-                <label>בחר את הצמח אותו תרצה להזמין (מחיר כל צמח - 50 ש"ח):  <a id="mustFill">*</a></label>
-                <div class="radio-options">
-                    <input type="radio" id="succulent" name="plant" value="סוקולנט ורוד" required> סוקולנט ורוד
-                    <input type="radio" id="orchid" name="plant" value="סחלב כחול" required> סחלב כחול
-                    <input type="radio" id="lily" name="plant" value="שושן כתום" required> שושן כתום
+                    <label>בחר את הצמח אותו תרצה להזמין (מחיר כל צמח - 50 ש"ח):  <a id="mustFill">*</a></label>
+                    <div class="radio-options">
+                        <input type="radio" id="succulent" name="plant" value="סוקולנט ורוד" required> סוקולנט ורוד
+                        <input type="radio" id="orchid" name="plant" value="סחלב כחול" required> סחלב כחול
+                        <input type="radio" id="lily" name="plant" value="שושן כתום" required> שושן כתום
+                    </div>
+
+                    <label>בחר תוספות (רשות):</label>
+                    <div class="checkbox-options">
+                        <input type="checkbox" id="accessory1" name="accessory1"> אגרטל-20 ש"ח
+                        <input type="checkbox" id="accessory2" name="accessory2"> חצץ ייחודי-10 ש"ח
+                        <input type="checkbox" id="accessory3" name="accessory3"> תרסיס הדברה - 30 ש"ח
+                    </div>
+                </form>
+
+                <div id="orderSummary"></div>
+                <div id="thankYouMessage"></div>
+                <div class="button-container">
+                    <button type="button" id="submitButton" disabled>אישור והזמנה</button>
+                    <button type="button" id="resetButton" disabled>איפוס הזמנה וחזרה לאתר</button>
+                </div>
+            </div>
+
+            <div class="boxes-container">
+                <div class="box">
+                    <h2>הצמח שלי</h2>
+                    <div id="plantDisplay">
+                        <img id="plantImage">
+                    </div>
                 </div>
 
-                <label>בחר תוספות (רשות):</label>
-                <div class="checkbox-options">
-                    <input type="checkbox" id="accessory1" name="accessory1"> אגרטל-20 ש"ח
-                    <input type="checkbox" id="accessory2" name="accessory2"> חצץ ייחודי-10 ש"ח
-                    <input type="checkbox" id="accessory3" name="accessory3"> תרסיס הדברה - 30 ש"ח"
+                <div class="box">
+                    <h2>התוספות שלי</h2>
+                    <div id="accessoriesDisplay">
+                        <img id="accessoryImage1" class="accessory-image" src="photos/vase.png" alt="אגרטל">
+                        <img id="accessoryImage2" class="accessory-image" src="photos/stones.png" alt="חצץ">
+                        <img id="accessoryImage3" class="accessory-image" src="photos/spray.png" alt="תרסיס">
+                    </div>
                 </div>
-            </form>
-
-            <div id="orderSummary"></div>
-            <div id="thankYouMessage"></div>
-            <div class="button-container">
-                <button type="button" id="submitButton" disabled>אישור והזמנה</button>
-                <button type="button" id="resetButton" disabled>איפוס הזמנה וחזרה לאתר</button>
             </div>
         </div>
+    </maim>
 
-        <div class="boxes-container">
-            <div class="box">
-                <h2>הצמח שלי</h2>
-                <div id="plantDisplay">
-                    <img id="plantImage">
-                </div>
-            </div>
-
-            <div class="box">
-                <h2>התוספות שלי</h2>
-                <div id="accessoriesDisplay">
-                    <img id="accessoryImage1" class="accessory-image" src="photos/vase.png" alt="אגרטל">
-                    <img id="accessoryImage2" class="accessory-image" src="photos/stones.png" alt="חצץ">
-                    <img id="accessoryImage3" class="accessory-image" src="photos/spray.png" alt="תרסיס">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Section -->
     <footer>
         <p>Images by Freepik</p>
         <nav aria-label="Footer_Nav" id="bottom_nav">
