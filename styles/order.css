@@ -12,8 +12,8 @@
 header {
     background-color: #8A9C80;
     padding: 10px 0;
-    top: 0; /* מוודא שהתפריט מוצמד לחלק העליון של המסך */
-    width: 100%; /* מבטיח שהתפריט יתפוס את כל רוחב המסך */
+    top: 0; 
+    width: 100%; 
 }
 
 /* הגדרה לתפריט הניווט העליון */
@@ -22,7 +22,7 @@ header {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around; /* שיטה לרווח שווה */
+    justify-content: space-around; 
 }
 
     #top_nav ul li {
@@ -30,7 +30,7 @@ header {
     }
 
         #top_nav ul li a {
-            font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+            font-family: 'Assistant', sans-serif; 
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -39,15 +39,15 @@ header {
         }
 
         #top_nav ul li:hover a {
-            background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש */
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         /* יישור התפריט הנפתח למרכז הכפתור */
         #top_nav ul li ul.dropdown {
             display: none;
             position: absolute;
-            top: 40px; /* או גובה הכפתור */
-            left: 50%; /* מתחילים מהמיקום האמצעי */
+            top: 40px; 
+            left: 50%; 
             transform: translateX(-50%); /* מזיזים את התפריט חזרה בחצי מהרוחב שלו */
             background-color: #8A9C80;
             list-style: none;
@@ -64,25 +64,23 @@ header {
             width: 150px;
         }
 
-            /* הגדרה לצבע אפור עבור האופציות 2.2, 2.3, 3.2 */
             #top_nav ul li ul.dropdown li a.disabled {
-                color: gray; /* צבע אפור */
-                cursor: not-allowed; /* מצביע לא מורשה */
+                color: gray; 
+                cursor: not-allowed; 
             }
 
-                /* מצב ה-hover עבור האופציות האפורות */
                 #top_nav ul li ul.dropdown li a.disabled:hover {
-                    background-color: transparent; /* אין שינוי ברקע */
+                    background-color: transparent; 
                 }
 
             #top_nav ul li ul.dropdown li a {
-                font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
+                font-family: 'Assistant', sans-serif; 
                 padding: 10px;
                 white-space: nowrap;
             }
 
                 #top_nav ul li ul.dropdown li a:hover {
-                    background-color: rgba(255, 255, 255, 0.3); /* רקע לבן חלש */
+                    background-color: rgba(255, 255, 255, 0.3); 
                 }
 
 /* עיצוב הפוטר */
@@ -100,7 +98,7 @@ footer {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around; /* שיטה לרווח שווה */
+    justify-content: space-around; 
 }
 
     #ul_footer li {
@@ -108,26 +106,25 @@ footer {
     }
 
         #ul_footer li a {
-            font-family: 'Assistant', sans-serif; /* שימוש בפונט Assistant */
-            color: white; /* צבע טקסט */
-            padding: 10px 20px; /* רווח סביב הטקסט */
-            text-decoration: none; /* ביטול קו תחתון */
-            display: block; /* מאפשר להקיף את כל האזור */
-            transition: background-color 0.3s ease; /* מעבר חלק בעת שינוי */
+            font-family: 'Assistant', sans-serif; 
+            color: white;
+            padding: 10px 20px; 
+            text-decoration: none; 
+            display: block;
+            transition: background-color 0.3s ease; 
         }
 
         #ul_footer li:hover a {
-            background-color: rgba(255, 255, 255, 0.2); /* רקע לבן חלש בעת מעבר */
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
 footer p {
     text-align: center;
     font-size: 14px;
-    color: white; /* את יכולה לשנות את הצבע בהתאם לעיצוב שלך */
+    color: white; 
     margin-bottom: 10px;
 }
 
-/* שאר ה-CSS שלך */
 .container {
     display: flex;
     justify-content: space-between;
@@ -171,12 +168,11 @@ label {
     margin-bottom: 5px;
 }
 
-    /* סגנון עבור הכוכבית האדומה */
     label .required {
         color: red;
-        background-color: transparent; /* מבטל את הרקע הירוק */
+        background-color: transparent; 
         font-size: 18px;
-        vertical-align: middle; /* מוודא שהכוכבית ממורכזת בצורה טובה */
+        vertical-align: middle; 
     }
 
 
@@ -213,13 +209,13 @@ button {
 }
 
 .button-container {
-    display: flex; /* מאפשר למקם את הכפתורים זה לצד זה */
-    justify-content: space-between; /* ריווח שווה בין הכפתורים */
-    margin-top: 20px; /* ריווח מעל הכפתורים */
+    display: flex; 
+    justify-content: space-between;
+    margin-top: 20px; 
 }
 
     .button-container button {
-        margin-right: 10px; /* ריווח של 10 פיקסלים בין הכפתורים */
+        margin-right: 10px; 
     }
 
 button:disabled {
@@ -289,9 +285,9 @@ button:hover:not(:disabled) {
     border: 1px solid #ddd;
     border-radius: 8px;
     text-align: right;
-    width: 100%; /* או כל רוחב שתרצי */
+    width: 100%; 
     box-sizing: border-box;
-    display: none; /* ודא שהצגת הסיכום פעילה */
+    display: none; 
 }
 
 /* עיצוב עבור תפריט פירורי לחם */
